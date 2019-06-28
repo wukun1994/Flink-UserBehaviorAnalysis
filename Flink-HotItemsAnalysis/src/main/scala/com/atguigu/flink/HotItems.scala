@@ -5,6 +5,7 @@ import java.util.Properties
 
 import com.sun.jmx.snmp.Timestamp
 import org.apache.flink.api.common.functions.AggregateFunction
+import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.common.state.{ListState, ListStateDescriptor}
 import org.apache.flink.api.java.tuple.Tuple
 import org.apache.flink.configuration.Configuration
@@ -15,6 +16,7 @@ import org.apache.flink.streaming.api.scala.function.WindowFunction
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.streaming.api.scala._
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.util.Collector
 
 import scala.collection.mutable.ListBuffer
@@ -46,9 +48,9 @@ object HotItems {
     val stream: DataStream[String] = env
       // 以window下为例，需替换成自己的路径
 
-      .readTextFile("D:\\idea\\workspace\\Flink-UserBehaviorAnalysis\\Flink-HotItemsAnalysis\\src\\main\\resources\\UserBehavior.csv")
+      //.readTextFile("D:\\idea\\workspace\\Flink-UserBehaviorAnalysis\\Flink-HotItemsAnalysis\\src\\main\\resources\\UserBehavior.csv")
       //替换数据来源为kafka
-      //  .addSource(new FlinkKafkaConsumer[String]("hotitems", new SimpleStringSchema(), properties))
+      .addSource(new FlinkKafkaConsumer[String]("hotitems", new SimpleStringSchema(), properties))
       //需要加隐式转换import org.apache.flink.streaming.api.scala._
       .map(line => {
         val linearray: Array[String] = line.split(",")
