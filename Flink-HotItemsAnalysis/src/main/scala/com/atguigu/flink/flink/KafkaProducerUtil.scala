@@ -1,4 +1,4 @@
-package com.atguigu.flink
+package com.atguigu.flink.flink
 
 import java.util.Properties
 

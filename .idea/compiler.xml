@@ -9,6 +9,7 @@
         <module name="Flink-HotItemsAnalysis" />
         <module name="Flink-LoginFailDetect" />
         <module name="Flink-NetworkTrafficAnalysis" />
+        <module name="Flink-OrderTimeoutDetect" />
       </profile>
     </annotationProcessing>
   </component>

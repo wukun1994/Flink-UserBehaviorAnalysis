@@ -12,6 +12,7 @@
         <module>Flink-HotItemsAnalysis</module>
         <module>Flink-NetworkTrafficAnalysis</module>
         <module>Flink-LoginFailDetect</module>
+        <module>Flink-OrderTimeoutDetect</module>
     </modules>
     <properties>
         <flink.version>1.7.2</flink.version>

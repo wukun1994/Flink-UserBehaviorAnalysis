@@ -1,6 +1,4 @@
-package com.atguigu.flink
-
-
+package com.atguigu.flink.flink
 
 import org.apache.flink.cep.scala.CEP
 import org.apache.flink.cep.scala.pattern.Pattern
