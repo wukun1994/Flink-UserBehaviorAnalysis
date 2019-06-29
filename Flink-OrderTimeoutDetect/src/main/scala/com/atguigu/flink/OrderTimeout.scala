@@ -40,8 +40,9 @@ object OrderTimeout {
 
     val timeoutFunction = (map:Map[String,Iterable[OrderEvent]],timestamp:Long,out:
     Collector[OrderEvent]) =>{
-      print(timestamp)
+      println("timestamp:"+timestamp)
       val orderStart = map.get("begin").get.head
+      println("orderStart:"+orderStart)
       out.collect(orderStart)
     }
     val selectFunction =(map:Map[String,Iterable[OrderEvent]],out:Collector[OrderEvent]) =>{

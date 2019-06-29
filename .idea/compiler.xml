@@ -10,6 +10,7 @@
         <module name="Flink-LoginFailDetect" />
         <module name="Flink-NetworkTrafficAnalysis" />
         <module name="Flink-OrderTimeoutDetect" />
+        <module name="Flink-TwoStreamsJoin" />
       </profile>
     </annotationProcessing>
   </component>
